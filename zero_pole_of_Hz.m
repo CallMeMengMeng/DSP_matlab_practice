@@ -1,0 +1,15 @@
+b=[1 2 1];
+a=[1 0.5 -0.005 0.3];
+subplot(3,1,1);
+zplane(b,a);
+axis([-3 3 -1 1]);
+num=[0 1 2 1];
+den=[1 -0.5 -0.005 0.3];
+h=impz(num,den);
+subplot(3,1,2);
+stem(h,'filled');
+xlabel('k');ylabel('h(k)');
+[H,w]=freqz(num,den);
+subplot(3,1,3);
+plot(w/pi,abs(H));
+xlabel('/omege');ylabel('abs(H)');
